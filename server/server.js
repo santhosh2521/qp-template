@@ -55,7 +55,7 @@ app.post('/create-template', (req, res) => {
       CREATE TABLE IF NOT EXISTS templates (
         id INT AUTO_INCREMENT PRIMARY KEY,
         questionNumber TEXT,
-        subpart TEXT,
+        subpart INT,
         maxMarks TEXT,
         coNumber TEXT,
         btNumber TEXT

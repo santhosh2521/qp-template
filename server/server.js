@@ -56,7 +56,7 @@ app.post('/create-template', (req, res) => {
         id INT AUTO_INCREMENT PRIMARY KEY,
         questionNumber TEXT,
         subpart TEXT,
-        maxMarks TEXT,
+        maxMarks INT,
         coNumber TEXT,
         btNumber TEXT
       )

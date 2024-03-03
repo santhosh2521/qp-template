@@ -1,0 +1,10 @@
+.popupbtn{
+    padding: 10px;
+    border: 2px solid;
+    margin:10px;
+    background-color: rgba(240, 240, 228, 0.671);
+    border-radius: 10px;
+}
+.close{
+    margin-left: 66%;
+}

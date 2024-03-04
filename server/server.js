@@ -90,6 +90,12 @@ app.post('/create-template', (req, res) => {
   });
 });
 
+app.post('/tdatabase', (req, res) => {
+  // Store course coordinator details in the global variable
+  teachercomparator = req.body;
+  console.log(teachercomparator)
+});
+
 app.get('/template-data', (req, res) => {
   // Assuming you have a table named 'templates' in the database
   const { academicyear, subject, semester, department, ext } = teachercomparator;

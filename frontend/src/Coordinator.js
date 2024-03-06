@@ -77,14 +77,15 @@ export const Coordinator = () => {
 
   return (
     <body>
-      <div className='container'>
+          <div>
+          <Link to={'/'}><button className='logoutcc'>Logout</button></Link>
+        </div>
+        
+      <div class='containercc'>
       <div className="main"></div>
         <select id="temp" name="temp">
           <option value="create">QP template create</option>
         </select>
-        <div>
-          <Link to={'/'}><button className='logout'>Logout</button></Link>
-        </div>
         <h3>Institute Name: R V College of Engineering</h3>
         <form action="NAME.DD">
           <div>Academic year: <input type="number" name="acad" onChange={handleInputChange} /></div>
@@ -133,11 +134,11 @@ export const Coordinator = () => {
           <h4>Selection Screen</h4>
           <div>
             <div className="me">
-              <label>Create Template</label>
+              <label1>Create Template</label1>
               <input type="radio" name="opt" value="temp" onChange={handleRadioChange} />
             </div>
             <div className="me">
-              <label>Display</label>
+              <label1>Display</label1>
               <input type="radio" name="opt" value="dis" />
             </div>
 

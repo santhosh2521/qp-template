@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+// import './home.css';
+=======
 import './Popup.css';
 import './home.css';
+
 import './stemplate.css'
 
 export const Selecttemplate = () => {
@@ -50,7 +54,7 @@ export const Selecttemplate = () => {
 
  return (
     <div>
-      <h1>Select Template</h1>
+      <h1>The Template</h1>
       <div>
         {templateData.length > 0 ? (
           <table>

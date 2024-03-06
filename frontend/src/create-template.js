@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HotTable } from '@handsontable/react';
 import 'handsontable/dist/handsontable.full.css';
-import './Popup.css';
-import './home.css';
 
 export const Createtemplate = () => {
   const navigate = useNavigate();
@@ -80,8 +78,8 @@ export const Createtemplate = () => {
           data={data}
           colHeaders={columns}
           rowHeaders={true}
-          width='600px'
-          height='auto'
+          width='1535px'
+          height='570px'
           stretchH='all'
           licenseKey='non-commercial-and-evaluation' // Replace with your Handsontable license key
           settings={{

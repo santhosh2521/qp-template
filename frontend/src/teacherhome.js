@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Teacher } from './Teacher';
 import { Coordinator } from './Coordinator';
 import { useState } from 'react';
-import './Popup.css'
 import './home.css'
 
 

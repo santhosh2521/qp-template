@@ -1,40 +1,60 @@
-.buttonh{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin:50px;
-    padding: 15px 30px;
-    color: #2196f3;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-size: 24px;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: white;
-}
-
-.buttonh:hover{
-    /* color: #255784;
-    background: #2196f3;  */
-     box-shadow: 0 0 5px #2196f3,0 0 10px #2196f3,0 0 15px #2196f3;
-    transition-delay: .1s; 
+html, body {
+  height: 100%;
+  margin: 0;
+  position: relative; /* Set position relative for absolute positioning */
  }
-
- button.logout {
-    position: absolute;
-    top: 0px;
-    right: 20px;
-    margin-top: 10px; /* Adjust the margin based on your layout */
-    margin-right: 10px; /* Adjust the margin based on your layout */
-    padding: 10px 15px;
-    background-color: #ff0000; /* Choose a color for your button */
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  button.logout:hover {
-    background-color: #cc0000; /* Change the color on hover */
-  }
+ 
+ .container {
+  position: absolute;
+  top: 10px; /* Adjust the top position */
+ /* Adjust the left position */
+ }
+ 
+ .button-container {
+  text-align: center;
+ }
+ 
+ .buttonh {
+  width: 200px; /* Set the width to create a square shape */
+  height: 200px; /* Set the height to create a square shape */
+  margin: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+  line-height: 200px; /* Center the text vertically */
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px; /* Adjusted font size */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 0; /* Removes rounded corners */
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* Adds a shadow effect */
+ }
+ 
+ .buttonh:hover {
+  background-color: #e0e0e0; /* Lighter background color on hover */
+ }
+ 
+ .logout {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  width: 150px; /* Set the width */
+  height: 40px; /* Set the height */
+  border: 10px solid #ccc;
+  background-color: #f00; /* Red background color for logout button */
+  color: #fff; /* White text color for logout button */
+  text-align: center;
+  line-height: 4px; /* Center the text vertically */
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px; /* Adjusted font size */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 0; /* Removes rounded corners */
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* Adds a shadow effect */
+ }
+ 
+ .logout:hover {
+  background-color: #d00; /* Darker red color on hover */
+ }

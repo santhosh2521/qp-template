@@ -66,18 +66,18 @@ function Login() {
       <div className="wrapper">
         <h2 id="login">Log In</h2>
         <form action="" onSubmit={handleSubmit}>
-          <div className="label">
+          <div1 className="label" id='logem'>
             <label htmlFor="email">Email</label>
             <input type="email" placeholder="Enter Email" onChange={handleInput} name="email" />
             <i className='bx bx-envelope'></i>
             <div id="error">{errors.email && <span>{errors.email}</span>}</div>
-          </div>
-          <div className="label">
+          </div1>
+          <div1 className="label" id='logem'>
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Enter Password" name="password" onChange={handleInput} />
             <i className='bx bxs-lock-alt' ></i>
             <div id="error">{errors.password && <span>{errors.password}</span>}</div>
-          </div>
+          </div1>
           <button type="submit" className="button">Login</button>
           <Link to="/signup" ><button className="button"> Create Account</button></Link>
         </form>

@@ -10,10 +10,6 @@ import { Teacherhome } from "./teacherhome";
 import {Createtemplate} from "./create-template";
 import {Selecttemplate} from "./select-template";
 
-
-
-
-
 function App (){ 
     return(
         <div>

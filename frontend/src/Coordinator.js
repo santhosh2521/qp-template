@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './coordinator.css';
-import { Createtemplate } from './create-template';
+import { Createtemplate } from './create-template.js';
 
 export const Coordinator = () => {
   const navigate = useNavigate();

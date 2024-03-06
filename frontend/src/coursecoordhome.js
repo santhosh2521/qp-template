@@ -3,16 +3,13 @@ import { Link } from "react-router-dom";
 import { Teacher } from './Teacher';
 import { Coordinator } from './Coordinator';
 import { useState } from 'react';
-import './Popup.css'
 import './home.css'
 
 
 export const Coursecoordhome = () => {
-   
-
   return (
     
-    <div >
+    <div calss="container">
       <Link to={'/coursecoordinator'}><button class='buttonh'>QP Template</button></Link>
         <button class='buttonh'>CIE</button>
         <button class='buttonh'>Attendance</button>

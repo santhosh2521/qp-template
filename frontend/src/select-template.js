@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Popup.css';
-import './home.css';
+// import './home.css';
+import './stemplate.css'
 
 export const Selecttemplate = () => {
-  const [templateData, setTemplateData] = useState([]);
-  const [obtainedMarks, setObtainedMarks] = useState({});
-  const navigate = useNavigate();
+ const [templateData, setTemplateData] = useState([]);
+ const [obtainedMarks, setObtainedMarks] = useState({});
+ const navigate = useNavigate();
 
-  useEffect(() => {
+ useEffect(() => {
     // Fetch data from the server
     fetch('http://localhost:8081/template-data') // Replace with your actual server endpoint
       .then(response => response.json())
       .then(data => setTemplateData(data))
       .catch(error => console.error('Error fetching data:', error));
-  }, []);
+ }, []);
 
-  const handleObtainedMarksChange = (questionNumber, value) => {
+ const handleObtainedMarksChange = (questionNumber, value) => {
     setObtainedMarks(prevMarks => ({
       ...prevMarks,
       [questionNumber]: value,
     }));
-  };
+ };
 
-  const handleSubmit = () => {
+ const handleSubmit = () => {
     // Send obtained marks to the server
     fetch('http://localhost:8081/update-obtained-marks', {
       method: 'POST',
@@ -45,32 +45,51 @@ export const Selecttemplate = () => {
         }
       })
       .catch(error => console.error('Error submitting obtained marks:', error));
-  };
+ };
 
-  return (
+ return (
     <div>
       <h1>Select Template</h1>
       <div>
-        {templateData.map(template => (
-          <div key={template.id}>
-            <p>Question Number: {template.questionNumber}</p>
-            <p>Subpart: {template.subpart}</p>
-            <p>Max Marks: {template.maxMarks}</p>
-            <p>CO Number: {template.coNumber}</p>
-            <p>BT Number: {template.btNumber}</p>
-            <label>Obtained Marks: </label>
-            <input
-  type="text"
-  value={obtainedMarks[template.id] || ''}
-  onChange={(e) => handleObtainedMarksChange(template.id, e.target.value)}
-/>
-          </div>
-        ))}
+        {templateData.length > 0 ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Question Number</th>
+                <th>Subpart</th>
+                <th>Max Marks</th>
+                <th>CO Number</th>
+                <th>BT Number</th>
+                <th>Obtained Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              {templateData.map(template => (
+                <tr key={template.id}>
+                 <td>{template.questionNumber}</td>
+                 <td>{template.subpart}</td>
+                 <td>{template.maxMarks}</td>
+                 <td>{template.coNumber}</td>
+                 <td>{template.btNumber}</td>
+                 <td>
+                    <input
+                      type="text"
+                      value={obtainedMarks[template.id] || ''}
+                      onChange={(e) => handleObtainedMarksChange(template.id, e.target.value)}
+                    />
+                 </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No templates available.</p>
+        )}
       </div>
       <button type="button" onClick={handleSubmit}>
         Submit
       </button>
       <Link to={'/'}><button className='logout'>Logout</button></Link>
     </div>
-  );
+ );
 };

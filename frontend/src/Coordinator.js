@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './coordinator.css';
-import { Createtemplate } from './create-template';
+import { Createtemplate } from './create-template.js';
 
 export const Coordinator = () => {
   const navigate = useNavigate();
@@ -77,7 +77,7 @@ export const Coordinator = () => {
 
   return (
     <body>
-      <div className='container'>
+      <div class='container'>
       <div className="main"></div>
         <select id="temp" name="temp">
           <option value="create">QP template create</option>

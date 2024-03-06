@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom"; 
-import { Teacher } from './Teacher';
-import { Coordinator } from './Coordinator';
+// import { Teacher } from './Teacher';
+// import { Coordinator } from './Coordinator';
 import Modal from 'react-modal'
 import { useState } from 'react';
-import './Popup.css'
 import './home.css'
 
 

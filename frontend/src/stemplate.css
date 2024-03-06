@@ -1,0 +1,56 @@
+/* home.css */
+
+/* Add borders to the table and its cells */
+table {
+    border-collapse: collapse; /* Ensures that adjacent table cells share borders */
+    width: 100%; /* Adjust as needed */
+    margin-bottom: 20px; /* Adds space below the table */
+   }
+   
+   th, td {
+    border: 1px solid #ddd; /* Adds a border around each cell */
+    padding: 8px; /* Adds space inside each cell */
+    text-align: left; /* Aligns text to the left */
+   }
+   
+   /* Set the background color of the cells to white */
+   th, td {
+    background-color: white;
+   }
+   
+   /* Additional styles for the table header */
+   th {
+    background-color: #f2f2f2; /* Light grey background for the header */
+    color: black; /* Dark text for better contrast */
+   }
+   
+   /* Optional: Add spacing around the table for better visual separation */
+   table {
+    margin: 20px 0; /* Adds space above and below the table */
+   }
+   
+   /* Style for input fields within table cells to make border invisible */
+   input[type="text"] {
+    border: none; /* Removes the border from the input field */
+    outline: none; /* Removes the outline when the input is focused */
+   }
+   
+   /* Optional: Style the submit button for better appearance */
+   button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding around the text */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+   }
+   
+   /* Optional: Style the logout button similarly */
+   .logout {
+    background-color: #f44336; /* Red background */
+   }
+   

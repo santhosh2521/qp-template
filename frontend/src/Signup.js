@@ -56,7 +56,7 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="wrapper">
+      <div className="wrappers">
         <h2 id="login">Sign Up</h2>
         <form action="" onSubmit={handleSubmit}>
           <div className="label">

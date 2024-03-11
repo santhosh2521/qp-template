@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 // import './home.css';
+=======
+import './Popup.css';
+import './home.css';
+
 import './stemplate.css'
 
 export const Selecttemplate = () => {

@@ -203,10 +203,7 @@ app.post('/create-database', (req, res) => {
   });
 });
 
-// ...
 
-
-// ...
 
 app.post('/login', async (req, res) => {
   const sql = 'SELECT * FROM signup WHERE email = ?';
@@ -239,34 +236,72 @@ app.post('/login', async (req, res) => {
 });
 
 // Define your API endpoints for handling signup, login, etc.
-app.post('/signup', (req, res) => {
-  const { fname, lname, email, dob, phoneno, password, role } = req.body;
+// app.post('/signup', (req, res) => {
+//   const { fname, lname, email, dob, phoneno, password, role } = req.body;
 
-  // Check if the email is already registered
-  db.query('SELECT * FROM signup WHERE email = ?', [email], (error, results) => {
-    if (error) {
-      console.error('Database query error: ', error);
-      return res.status(500).json({ success: false, message: 'Internal server error' });
-    }
+//   // Check if the email is already registered
+//   db.query('SELECT * FROM signup WHERE email = ?', [email], (error, results) => {
+//     if (error) {
+//       console.error('Database query error: ', error);
+//       return res.status(500).json({ success: false, message: 'Internal server error' });
+//     }
 
-    if (results.length > 0) {
-      // Email is already registered
-      return res.status(400).json({ success: false, message: 'Email is already registered' });
-    }
+//     if (results.length > 0) {
+//       // Email is already registered
+//       return res.status(400).json({ success: false, message: 'Email is already registered' });
+//     }
 
-    // If email is not registered, proceed with user registration
-    db.query('INSERT INTO signup (fname, lname, email, dob, phoneno, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      [fname, lname, email, dob, phoneno, password, role], (error) => {
-        if (error) {
-          console.error('Database query error: ', error);
-          return res.status(500).json({ success: false, message: 'Internal server error' });
-        }
+//     // If email is not registered, proceed with user registration
+//     db.query('INSERT INTO signup (fname, lname, email, dob, phoneno, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)',
+//       [fname, lname, email, dob, phoneno, password, role], (error) => {
+//         if (error) {
+//           console.error('Database query error: ', error);
+//           return res.status(500).json({ success: false, message: 'Internal server error' });
+//         }
 
-        // User registration successful
-        res.json({ success: true, message: 'User signed up successfully' });
-      });
-  });
-});
+//         // User registration successful
+//         res.json({ success: true, message: 'User signed up successfully' });
+//       });
+//   });
+// });
+
+app.post('/signup', async (req, res) => {
+  const users = req.body;
+ 
+  try {
+     // Begin transaction
+     await db.beginTransaction();
+ 
+     for (const user of users) {
+       const { fname, lname, email, dob, phoneno, password, role } = user;
+ 
+       // Check if the email is already registered
+       const existingUser = await db.query('SELECT * FROM signup WHERE email = ?', [email]);
+ 
+       if (existingUser.length > 0) {
+         // Email is already registered
+         return res.status(400).json({ success: false, message: 'Email is already registered' });
+       }
+ 
+       // If email is not registered, proceed with user registration
+       await db.query('INSERT INTO signup (fname, lname, email, dob, phoneno, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)',
+         [fname, lname, email, dob, phoneno, password, role]);
+     }
+ 
+     // Commit transaction
+     await db.commit();
+ 
+     // User registration successful
+     res.json({ success: true, message: 'Users signed up successfully' });
+  } catch (error) {
+     // Rollback transaction in case of error
+     await db.rollback();
+     console.error('Database query error: ', error);
+     return res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+ });
+
+
 
 // Start the server
 const PORT = 8081;

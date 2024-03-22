@@ -1,27 +1,27 @@
-// Login.js
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import "./LoginValidation";
 import validation from "./LoginValidation";
-import "./Login.css"  
+import "./Login.css";
+
 
 function Login() {
-  const [values, setValues] = useState({
+ const [values, setValues] = useState({
     email: '',
     password: '',
-  });
+ });
 
-  const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
+ const [errors, setErrors] = useState({});
+ const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleInput = (event) => {
+ const handleInput = (event) => {
     setValues((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }));
-  };
+ };
 
-  const handleSubmit = async (event) => {
+ const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = validation(values);
   
@@ -42,48 +42,48 @@ function Login() {
         if (response.ok) {
           // Check the role and redirect accordingly
           if (result.role === 'course coordinator' || result.role === 'Course Coordinator') {
-            // Redirect course coordinator to /course-coordinator-home
             navigate('/coursecoordhome');
           } else if (result.role === 'teacher') {
-            // Redirect teacher to /teacher-home
             navigate('/teacherhome');
           } else {
-            // Default redirect for other roles or no role specified
             navigate('/home');
           }
         } else {
-          // Login failed, handle errors
           setErrors({ password: result.message });
         }
       } catch (error) {
         console.error('Error during login:', error);
       }
     }
-  };
+ };
 
-  return (
+ const handleAdminLogin = () => {
+    navigate('/admin-login'); // Navigate to AdminLogin.js
+ };
+
+ return (
     <div>
-      <div className="wrapper">
+      <div class="lg">
         <h2 id="login">Log In</h2>
         <form action="" onSubmit={handleSubmit}>
-          <div1 className="label" id='logem'>
+          <div className="label" id='logem'>
             <label htmlFor="email">Email</label>
             <input type="email" placeholder="Enter Email" onChange={handleInput} name="email" />
             <i className='bx bx-envelope'></i>
             <div id="error">{errors.email && <span>{errors.email}</span>}</div>
-          </div1>
-          <div1 className="label" id='logem'>
+          </div>
+          <div className="label" id='logem'>
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Enter Password" name="password" onChange={handleInput} />
             <i className='bx bxs-lock-alt' ></i>
             <div id="error">{errors.password && <span>{errors.password}</span>}</div>
-          </div1>
+          </div>
           <button type="submit" className="button">Login</button>
-          <Link to="/signup" ><button className="button"> Create Account</button></Link>
+          <button onClick={() => navigate('/admin-login')}>Admin</button>
         </form>
       </div>
     </div>
-  );
+ );
 }
 
 export default Login;

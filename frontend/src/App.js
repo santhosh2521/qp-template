@@ -9,6 +9,8 @@ import { Coursecoordhome } from "./coursecoordhome";
 import { Teacherhome } from "./teacherhome";
 import {Createtemplate} from "./create-template";
 import {Selecttemplate} from "./select-template";
+import {Popup} from "./Popup"
+import AdminLogin from "./AdminLogin";
 
 function App (){ 
     return(
@@ -24,6 +26,7 @@ function App (){
           <Route path='/teacherhome' element={<Teacherhome />} />
           <Route path='/create-template' element={<Createtemplate />} />
           <Route path='/select-template' element={<Selecttemplate />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
         </Routes>
         </BrowserRouter>
         </div>

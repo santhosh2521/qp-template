@@ -76,7 +76,7 @@ export const Teacher = () => {
 
   return (
     <body>
-              <div>
+   <div>
           <Link to={'/'}><button className='logoutcc'>Logout</button></Link>
         </div>
       <div className='containercc'>

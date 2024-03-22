@@ -54,7 +54,6 @@ export const Selecttemplate = () => {
 
  return (
     <div>
-      <h1>The Template</h1>
       <div>
         {templateData.length > 0 ? (
           <table>

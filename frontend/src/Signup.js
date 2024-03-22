@@ -91,8 +91,8 @@ const Signup = () => {
                 <td><input type="email" placeholder="Enter Email" name='email' value={values.email} onChange={(e) => handleChange(e, index)}/></td>
                 <td><input type='date' name='dob' value={values.dob} onChange={(e) => handleChange(e, index)} /></td>
                 <td><input type='tel' name='phoneno' value={values.phoneno} onChange={(e) => handleChange(e, index)} /></td>
-                <td><input type="password" placeholder="Enter Password" name='password' value={values.password} onChange={(e) => handleChange(e, index)}/></td>
-                <td><input type="password" placeholder="Confirm Password" name="confirmPassword" value={values.confirmPassword} onChange={(e) => handleChange(e, index)}/></td>
+                <td><input type="passwords" placeholder="Enter Password" name='password' value={values.password} onChange={(e) => handleChange(e, index)}/></td>
+                <td><input type="passwords" placeholder="Confirm Password" name="confirmPassword" value={values.confirmPassword} onChange={(e) => handleChange(e, index)}/></td>
                 <td><input type="name" placeholder="Enter Role (e.g., Course Coordinator or Teacher)" name="role" value={values.role} onChange={(e) => handleChange(e, index)}/></td>
                </tr>
              </tbody>

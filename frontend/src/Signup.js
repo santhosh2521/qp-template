@@ -59,7 +59,6 @@ const Signup = () => {
     <div>
       <div className="admin">
         <h2 id="login">Admin</h2>
-<<<<<<< HEAD
         <form action="" onSubmit={handleSubmit}>
           {formValues.map((values, index) => (
              <table key={index} className="signup-table">
@@ -88,7 +87,7 @@ const Signup = () => {
                </tr>
              </tbody>
            </table>
-=======
+
         <form onSubmit={handleSubmit}>
           {data.map((values, index) => (
             <table key={index} className="signup-table">

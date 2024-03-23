@@ -135,11 +135,7 @@ export const Teacher = () => {
               <label11>Select Template</label11>
               <input type="radio" name="opt" value="temp" onChange={handleRadioChange} />
             </div>
-            <div className="me">
-              <label11>Display</label11>
-              <input type="radio" name="opt" value="dis" />
-            </div>
-
+            
           </div>
         </form>
         <button type="button" className='buttonc'>Submit</button>

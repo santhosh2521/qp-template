@@ -91,7 +91,7 @@ export const Coordinator = () => {
           <div>Academic year: <input type="number" name="acad" onChange={handleInputChange} /></div>
           <div>
             <label htmlFor="sub">Subject:</label>
-            <select id="sub" name="sub" onChange={handleInputChange}>
+            <select id="subc" name="sub" onChange={handleInputChange}>
             <option value="sel">Select dept</option>
               <option value="math">Mathematics</option>
                <option value="che">Chemistry</option>
@@ -134,11 +134,11 @@ export const Coordinator = () => {
           <h4>Selection Screen</h4>
           <div>
             <div className="me">
-              <label1>Create Template</label1>
+              <label11>Create Template</label11>
               <input type="radio" name="opt" value="temp" onChange={handleRadioChange} />
             </div>
             <div className="me">
-              <label1>Display</label1>
+              <label11>Display</label11>
               <input type="radio" name="opt" value="dis" />
             </div>
 

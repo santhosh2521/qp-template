@@ -132,11 +132,11 @@ export const Teacher = () => {
           <h4>Selection Screen</h4>
           <div>
             <div className="me">
-              <label1>Select Template</label1>
+              <label11>Select Template</label11>
               <input type="radio" name="opt" value="temp" onChange={handleRadioChange} />
             </div>
             <div className="me">
-              <label1>Display</label1>
+              <label11>Display</label11>
               <input type="radio" name="opt" value="dis" />
             </div>
 

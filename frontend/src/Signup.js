@@ -59,33 +59,6 @@ const Signup = () => {
     <div>
       <div className="admin">
         <h2 id="login">Admin</h2>
-        <form action="" onSubmit={handleSubmit}>
-          {formValues.map((values, index) => (
-             <table key={index} className="signup-table">
-             <thead>
-               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Date of Birth</th>
-                <th>Phone Number</th>
-                <th>Password</th>
-                <th>Confirm Password</th>
-                <th>Role</th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                <td><input type="name" placeholder="Enter First name" name='fname' value={values.fname} onChange={(e) => handleChange(e, index)}/></td>
-                <td><input type="name" placeholder="Enter Last name" name='lname' value={values.lname} onChange={(e) => handleChange(e, index)}/></td>
-                <td><input type="email" placeholder="Enter Email" name='email' value={values.email} onChange={(e) => handleChange(e, index)}/></td>
-                <td><input type='date' name='dob' value={values.dob} onChange={(e) => handleChange(e, index)} /></td>
-                <td><input type='tel' name='phoneno' value={values.phoneno} onChange={(e) => handleChange(e, index)} /></td>
-                <td><input type="passwords" placeholder="Enter Password" name='password' value={values.password} onChange={(e) => handleChange(e, index)}/></td>
-                <td><input type="passwords" placeholder="Confirm Password" name="confirmPassword" value={values.confirmPassword} onChange={(e) => handleChange(e, index)}/></td>
-                <td><input type="name" placeholder="Enter Role (e.g., Course Coordinator or Teacher)" name="role" value={values.role} onChange={(e) => handleChange(e, index)}/></td>
-               </tr>
-             </tbody>
         <form onSubmit={handleSubmit}>
           {data.map((values, index) => (
             <table key={index} className="signup-table">

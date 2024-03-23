@@ -3,15 +3,15 @@
 /* Add borders to the table and its cells */
 table {
     border-collapse: collapse; /* Ensures that adjacent table cells share borders */
-    width: 150%; /* Adjusted to increase the table width to 150% of its container */
-    margin-bottom: 20px; /* Adds space below the table */
-    margin-left: 0; /* Ensures the table starts at the left edge of its container */
+    width: 100%; /* Span the entire width of the page */
 }
 
 th, td {
     border: 1px solid #ddd; /* Adds a border around each cell */
-    padding: 8px; /* Adds space inside each cell */
+    padding: 12px; /* Adds space inside each cell */
     text-align: left; /* Aligns text to the left */
+    font-size: 16px; /* Font size for better readability */
+    width: 250px;
 }
 
 /* Set the background color of the cells to white */
@@ -23,11 +23,6 @@ th, td {
 th {
     background-color: #f2f2f2; /* Light grey background for the header */
     color: black; /* Dark text for better contrast */
-}
-
-/* Optional: Add spacing around the table for better visual separation */
-table {
-    margin: 20px 0; /* Adds space above and below the table */
 }
 
 /* Style for input fields within table cells to make border invisible */

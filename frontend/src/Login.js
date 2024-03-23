@@ -64,20 +64,22 @@ function Login() {
       <div className="loginContainer">
         <h2 id="loginTitle">Log In</h2>
         <form action="" onSubmit={handleSubmit}>
-          <div className="inputLabel" id='emailLabel'>
+          <div className="inputLabel">
             <label htmlFor="email">Email</label>
             <input type="email" placeholder="Enter Email" onChange={handleInput} name="email" />
             <i className='bx bx-envelope'></i>
             <div id="emailError">{errors.email && <span>{errors.email}</span>}</div>
           </div>
-          <div className="inputLabel" id='passwordLabel'>
+          <div className="inputLabel">
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Enter Password" name="password" onChange={handleInput} />
             <i className='bx bxs-lock-alt' ></i>
             <div id="passwordError">{errors.password && <span>{errors.password}</span>}</div>
           </div>
+          <div class="btm">
           <button type="submit" className="loginButton">Login</button>
           <button onClick={handleAdminLogin} className="adminLoginButton">Admin</button>
+          </div>
         </form>
       </div>
     </div>

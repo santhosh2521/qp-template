@@ -12,6 +12,7 @@ let teachercomparator = null;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
 
 // Database connection
 const db = mysql.createConnection({
@@ -265,43 +266,24 @@ app.post('/login', async (req, res) => {
 //   });
 // });
 
-app.post('/signup', async (req, res) => {
-  const users = req.body;
+app.post('/signup', (req, res) => {
+  const signupData = req.body;
  
-  try {
-     // Begin transaction
-     await db.beginTransaction();
+  signupData.forEach(user => {
+     const { fname, lname, email, dob, phoneno, password, role } = user;
  
-     for (const user of users) {
-       const { fname, lname, email, dob, phoneno, password, role } = user;
- 
-       // Check if the email is already registered
-       const existingUser = await db.query('SELECT * FROM signup WHERE email = ?', [email]);
- 
-       if (existingUser.length > 0) {
-         // Email is already registered
-         return res.status(400).json({ success: false, message: 'Email is already registered' });
+     const insertSql = 'INSERT INTO signup (fname, lname, email, dob, phoneno, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)';
+     db.query(insertSql, [fname, lname, email, dob, phoneno, password, role], (err) => {
+       if (err) {
+         console.error('Error inserting data into the table:', err);
+         return res.status(500).json({ success: false, message: 'Internal server error' });
        }
+     });
+  });
  
-       // If email is not registered, proceed with user registration
-       await db.query('INSERT INTO signup (fname, lname, email, dob, phoneno, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)',
-         [fname, lname, email, dob, phoneno, password, role]);
-     }
- 
-     // Commit transaction
-     await db.commit();
- 
-     // User registration successful
-     res.json({ success: true, message: 'Users signed up successfully' });
-  } catch (error) {
-     // Rollback transaction in case of error
-     await db.rollback();
-     console.error('Database query error: ', error);
-     return res.status(500).json({ success: false, message: 'Internal server error' });
-  }
+  res.json({ success: true, message: 'Added Successfully' });
  });
-
-
+ 
 
 // Start the server
 const PORT = 8081;

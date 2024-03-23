@@ -4,44 +4,27 @@ body {
   padding: 20px;
 }
 
-.main {
+.containercc {
   max-width: 800px;
   margin: 0 auto;
 }
-.containercc {
-  position: absolute;
-  top: 40px; /* Adjust the top position */
-  left: -700px; /* Adjust the left position */
- }
 
 h3 {
   margin-top: 20px;
-  padding-bottom: 20px;
-}
-h4{
-  margin-top: 5px;
 }
 
 form div {
   margin-bottom: 10px;
-  padding: 4px;
 }
 
-label1 {
-  margin-top: 5px;
-  display: inline-block;
-  width: 150px; /* Adjust as needed */
-  
-}
 label {
   display: inline-block;
-  width: 100px; /* Adjust as needed */
-  
+  width: 150px; /* Adjust as needed */
 }
 
-select, input[type="number"], input[type="checkbox"] {
-  width: 200px; /* Adjust as needed */
-   padding: 8px;
+select, input[type="number"], input[type="radio"] {
+  width: calc(100% - 1000px); /* Adjust as needed */
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -49,10 +32,10 @@ select, input[type="number"], input[type="checkbox"] {
 }
 
 select {
-  width: 200px; /* Adjust as needed */
+  width: calc(100% - 1000px); /* Adjust as needed */
 }
 
-button {
+.buttonc {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -61,29 +44,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.buttonc:hover {
   background-color: #0056b3;
 }
-.logoutcc {
-  position: absolute;
-  top: 10px;
-  right: 0px;
-  left: 600px;
-  width: 150px; /* Set the width */
-  height: 40px; /* Set the height */
-  border: 10px solid #ccc;
-  background-color: #f00; /* Red background color for logout button */
-  color: #fff; /* White text color for logout button */
-  text-align: center;
-  line-height: 4px; /* Center the text vertically */
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 16px; /* Adjusted font size */
-  font-weight: bold; /* Make the text bold */
-  border-radius: 0; /* Removes rounded corners */
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* Adds a shadow effect */
- }
- 
- .logoutcc:hover {
-  background-color: #d00; /* Darker red color on hover */
- }

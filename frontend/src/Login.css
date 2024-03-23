@@ -1,83 +1,73 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
-  }
-  
-  body {
+   }
+   
+   body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #fcfcfc;
-  }
-  #logem
-  {
-    padding: 0px;
-  }
-  
-  .lg {
+   }
+   
+   .loginContainer {
     width: 420px;
     background: 		#C8C8C8;
     color: #333;
     border-radius: 10px;
-    padding: 30px 40px;
-  }
-  
-  #login {
+    padding: 30px 40px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the content vertically */
+    height: 511px;
+   }
+   
+   #loginTitle {
     font-size: 36px;
     text-align: center;
-    line-height: 1.2; /* Adjusted line-height */
-  }
-  
-  .lg .label {
+    line-height: 1.2
+   }
+   
+   .inputLabel {
     position: relative;
     width: 100%;
-    height: auto; /* Change to 'auto' for dynamic height */
+    height: auto;
     margin: 30px 0;
     margin-bottom: 10px;
-  }
-  
-  .label input {
+   }
+   
+   .inputLabel input[type="email"],
+   .inputLabel input[type="password"] {
     width: 100%;
     height: 2%;
     background: transparent;
-    border: none;
+    border: 2px solid black;
     outline: none;
-    border: 2px solid rgb(0, 0, 0);
     border-radius: 40px;
     font-size: 16px;
     color: rgb(0, 0, 0);
     padding: 20px 45px 20px 20px;
     margin-bottom: 38px;
-  }
-  
-  .label input::placeholder {
+   }
+   
+   .inputLabel input::placeholder {
     color: rgb(0, 0, 0);
-  }
-  
-  .lg i {
+   }
+   
+   .loginContainer i {
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-  }
-  form div1 {
-    margin-bottom: 10px;
-    padding: px;
-  }
-  
-  .lg label {
-    font-size: 16px;
-    color: rgb(0, 0, 0);
-    padding: 20px 45px 20px 20px;
-    line-height: 1.2; /* Adjusted line-height */
-    margin-top: -5px;
-  }
-  
-  .lg .button {
+   }
+   
+   .loginButton,
+   .adminLoginButton {
     width: 100%;
     height: 45px;
     background: white;
@@ -91,27 +81,15 @@
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
-    line-height: 1.2; /* Adjusted line-height */
-  }
-  
-  
-  #password{
-    margin-top: 1;
-    padding-top: 5;
-  }
-  .lg .newacc {
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
-    line-height: 1.2; /* Adjusted line-height */
-  }
-  
-  
-  #error {
+    line-height: 1.2;
+   }
+   
+   #emailError,
+   #passwordError {
     color: red;
     margin-top: -35px;
-  }
-  
-  #button {
-    padding-top: 10px;
-  }
+   }
+.btm{
+  position:absolute;
+  background-position-x:10px;
+}   

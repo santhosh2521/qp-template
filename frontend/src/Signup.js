@@ -86,8 +86,6 @@ const Signup = () => {
                 <td><input type="name" placeholder="Enter Role (e.g., Course Coordinator or Teacher)" name="role" value={values.role} onChange={(e) => handleChange(e, index)}/></td>
                </tr>
              </tbody>
-           </table>
-
         <form onSubmit={handleSubmit}>
           {data.map((values, index) => (
             <table key={index} className="signup-table">
@@ -116,7 +114,6 @@ const Signup = () => {
                 </tr>
               </tbody>
             </table>
->>>>>>> aa9589ead244f4a3843a6d19e7f72803d536db7a
           ))}
           <button type="button" onClick={addRow} className="btton">
             Add Row
